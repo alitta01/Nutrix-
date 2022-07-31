@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:miniproject/layout/theme.dart';
+import 'package:miniproject/widgets/navbar.dart';
 import 'package:miniproject/widgets/weekSchedule.dart';
 import 'package:miniproject/widgets/todayschedule.dart';
 
@@ -55,6 +56,7 @@ class HomeState extends State<HomeWidget> {
               ],
             ),
         )),
+        //bottomNavigationBar: BottomNavBar(),
     );
   }
 }
