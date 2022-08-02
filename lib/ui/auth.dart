@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniproject/layoutpage.dart';
 import '../net/flutterfire.dart';
 
 class Auth  extends StatefulWidget {
@@ -15,28 +16,33 @@ class  AuthState extends State<Auth> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:Container(
-
-    width: MediaQuery.of(context).size.width,
+        width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
-          color: Colors.blueAccent,
+          color: Colors.white,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image(
+              width: 100.0,
+              height:100.0,
+              fit: BoxFit.none,
+              image: new AssetImage('lib\assets\images\N logo.png'))
+              ,
             Container(
               width: MediaQuery.of(context).size.width / 1.3,
               child: TextFormField(
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Color.fromARGB(255, 22, 156, 91)),
                 controller: _idField,
                 decoration: InputDecoration(
                   hintText: "something@email.com",
                   hintStyle: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 22, 156, 91),
                   ),
                   labelText: "Email",
                   labelStyle: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 22, 156, 91),
                   ),
                 ),
               ),
@@ -45,55 +51,50 @@ class  AuthState extends State<Auth> {
             Container(
               width: MediaQuery.of(context).size.width / 1.3,
               child: TextFormField(
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color:Color.fromARGB(255, 22, 156, 91)),
                 controller: _passwordField,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "password",
                   hintStyle: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 22, 156, 91),
                   ),
                   labelText: "Password",
                   labelStyle: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 22, 156, 91),
                   ),
                 ),
               ),
             ),
+            
             SizedBox(height: MediaQuery.of(context).size.height / 35),
             Container(
+              
               width: MediaQuery.of(context).size.width / 1.4,
               height: 45,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
-                color: Colors.white,
+                color: Colors.greenAccent,
               ),
               child: MaterialButton(
                 onPressed: () async {
-                  bool shouldNavigate =
-                      await login(_idField.text, _passwordField.text);
+                  bool shouldNavigate =await login(_idField.text, _passwordField.text);
                   if (shouldNavigate) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => Layouts(),
                       ),
                     );
                   }
                 },
                 child: Text("Login"),
               ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height / 35),
-            Container(
-              width: MediaQuery.of(context).size.width / 1.4,
-              height: 45,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                color: Colors.white,
-              ),
               
             ),
+            
+              
+            
           ],
         ),
       ),
