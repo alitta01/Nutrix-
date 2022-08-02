@@ -1,27 +1,26 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:miniproject/ui/auth.dart';
-
+import 'package:miniproject/detailspage.dart';
 import 'package:miniproject/loginpage.dart';
+//import 'package:flutter_login_signup/loginpage.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:miniproject/ui/auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+  await Firebase.initializeApp
     (
     // Replace with actual values
     options: FirebaseOptions(
-      apiKey: "XXX",
-      appId: "XXX",
-      messagingSenderId: "XXX",
-      projectId: "XXX",
+      apiKey: "AIzaSyCsrif6Fx3y0Upv0eF4UjlnOAdivzeIBhs",
+      appId: "1:698494638709:android:7fd7f682f5bcf2ee5d363c",
+      messagingSenderId: "381774348035",
+      projectId: "nutrix-c187e",
     ),
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
-
+//OnResume()
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: Auth(),
+      //home: Loginpage(),
+      //home: DetailsD(),
     );
   }
 }
-
